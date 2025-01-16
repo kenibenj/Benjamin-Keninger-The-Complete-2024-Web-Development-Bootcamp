@@ -1,0 +1,176 @@
+
+*{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body{
+    margin: 0;
+}
+
+section > div{
+    margin: 0 20vw 0 20vw;
+}
+
+
+
+.intro{
+    background-color: #D1E9F6;
+    margin: 50px 0 50px 0;
+}
+
+.flex{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 15px;
+}
+
+.profile > *{
+    filter: drop-shadow(7px 5px 0px #FFF);
+    transform:rotate(-5deg);
+    text-align: center;
+}
+
+.profile{
+    padding-top: 30px;
+}
+
+.profile-img{
+    filter: drop-shadow(7px 8px 0px #000);
+    border-radius: 20px 0 20px 0;
+    transform:rotate(5deg);
+}
+
+.profile h1{
+    text-transform: uppercase;
+    font-size: xxx-large;
+}
+
+.profile h2{
+    text-transform: uppercase;
+    font-size: x-large;
+    margin-top: -28px;
+}
+
+.profile h3{
+    margin-top: -8px; 
+    font-weight: 100;
+    font-size: medium;
+}
+
+.skills{
+    background-color: #F6EACB;
+    padding-bottom: 50px;
+    margin: 50px 0 50px 0;
+}
+
+.projects{
+    background-color: #F1D3CE;
+    padding-bottom: 50px;
+    margin: 50px 0 50px 0;
+}
+
+.about{
+    text-align: justify;
+    transform:rotate(3deg);
+    background-color: white;
+    border: 4px black solid;
+    border-radius: 0   20px 0 20px;
+    padding: 30px;
+    width: 500px;
+    filter: drop-shadow(7px 8px 0px #000);
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 15px;
+}
+
+.grid img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 0px 15px 0px 15px;
+    filter: drop-shadow(7px 8px 0px #000);
+}
+
+.contact{
+    background-color: #C6F8E5;
+    padding-bottom: 50px;
+    padding-top: 40px;
+    margin: 50px 0 0 0;
+}
+
+.contact-container{
+    margin: 0 20vw 0 20vw;
+}
+
+.contact .about{
+    transform: rotate(0);
+    margin: auto;
+}
+
+button{
+    background-color: #C6F8E5;
+    filter: drop-shadow(7px 8px 0px #000);
+    border-radius: 10px;
+    padding: 15px;
+    font-weight: 900;
+}
+
+button:hover{
+    background-color: #F1D3CE;
+    transform: rotate(-3deg);
+}
+
+button a{
+    color: black;
+    text-decoration: none;
+}
+
+.projects .about-header{
+    transform: rotate(10deg);
+}
+
+@media  (max-width:990px) {
+    .about{
+        text-align: center;
+    }
+
+    .skills img, .projects .about-header img, .intro img{
+        display: none;
+    }
+
+    .skills .flex, .projects .flex{
+        display: block;
+    }
+
+    .skills h2, .skills .about, .projects h2, .projects .about-header, .projects .about{
+        transform: none !important;
+    }
+
+    .skills, .projects{
+        padding-top: 40px;
+    }
+
+    section{
+        width: 100vw;
+    }
+
+    .about{
+        width: 80% !important;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    
+    .intro *{
+        transform: none;
+        padding-top: 0;
+    }
+
+    section > div{
+        margin: 0 10vw 0 10vw !important;
+    }
+}
