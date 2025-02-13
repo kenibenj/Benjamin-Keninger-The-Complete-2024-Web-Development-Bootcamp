@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/styles.css">
+    <title>Cat Blog</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Cat Blog</h1>
+
+        <img style="" id="cat-image" src="" alt="A cute cat" width="300">
+        <% if(locals.posts){%>
+            <% for(i = 0; i < posts.length; i++){%>
+                <div class="comment">
+                    <h2>
+                        <%=posts[i].name%>
+                    </h2>
+                    <p><%=posts[i].body%></p>
+                    <div class="buttons">
+                        <form action="/edit" method="POST">
+                            <input type="hidden" name="id" value="<%= posts[i].id %>">
+                            <input type="submit" value="Edit Post">
+                        </form>
+                        <form action="/delete" method="POST">
+                            <input type="hidden" name="id" value="<%= posts[i].id %>">
+                            <input type="submit" value="Delete Post">
+                        </form>
+                    </div>
+                </div>
+            <%}%>
+        <%}%>
+            <a href="/create">Create New Post</a>
+    </div>
+</body>
+
+<script>
+
+    $.ajax({
+        method: "GET",
+        url: "https://api.thecatapi.com/v1/images/search",
+        success: function (cat) {
+            console.log(cat);
+            document.querySelector("#cat-image").src = cat[0].url;
+        },
+        error: function (error) {
+            console.log("Failed to load cat image", error);
+        }
+    });
+    
+</script>
+
+</html>
