@@ -1,0 +1,66 @@
+body{
+    min-height: 100vh;
+    box-shadow: 0 0 0 black, 0 0 6em #8a4d0f inset;
+    background: #FEFDEE;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+*{
+    font-family: "Shafarik", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.cover{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("https://t3.ftcdn.net/jpg/09/58/06/04/360_F_958060471_CxAWAnUCsqI5vTVJXDuUcqi5ec2b0fBz.jpg");
+    background-size: contain;
+    opacity: .3;
+    z-index: 3;
+    user-select: none;
+}
+
+.logo{
+    position: fixed;
+    width: 90vw;
+    height: 90vh;
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/f/f7/Hammer_Sickle_Star_Wreath.png");
+    background-size: contain;
+    opacity: .25;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: 6%;
+    user-select: none;
+}
+
+.box{
+    z-index: 2;
+    text-align: center;
+}
+
+.box h1{
+    font-size: 8em;
+    padding-bottom: 0;
+    margin: 0px;
+    color: #CD0000;
+    text-shadow:
+    -2px -2px 0 black,  
+     2px -2px 0 black,
+    -2px  2px 0 black,
+     2px  2px 0 black; /* Creates a black outline */
+     opacity: .8;
+}
+
+.box h2{
+    font-size: 3em;
+    padding-bottom: 0;
+    margin-top: -20px;
+    color: black;
+    opacity: .8;
+}

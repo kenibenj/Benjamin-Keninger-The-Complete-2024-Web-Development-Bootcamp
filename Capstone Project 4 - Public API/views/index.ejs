@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Трекер русских праздников</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shafarik&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <div></div>
+    <div class="cover"></div>
+    <div class="logo"></div>
+    <div class="box">
+        <h1>СЕГОДНЯ <span id="span">НЕ</span> ПРАЗДНИК!</h1>
+        <h2 id="work">ВЕРНИТЕСЬ К РАБОТЕ!</h2>
+        <h2 id="free">НАСЛАЖДАЙТЕСЬ ЭТИМ ДНЕМ БЕЗ РАБОТЫ!</h2>
+    </div>
+</body>
+
+<script>
+    var status = <%=status%>;
+    if(status == 200){
+        document.querySelector("#work").style.display = 'none';
+        document.querySelector("#span").style.display = 'none';
+    }
+    else{
+        document.querySelector("#free").style.display = 'none';
+    }
+
+</script>
+
+</html>
