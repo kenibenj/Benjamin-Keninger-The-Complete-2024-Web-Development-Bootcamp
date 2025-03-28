@@ -1,0 +1,49 @@
+<%- include('partials/header.ejs'); -%>
+
+    <script>
+        console.log(<% - JSON.stringify(books[0]) %>);
+    </script>
+
+    <%
+    books.sort(function(a, b) {
+        return b.score - a.score; // Descending order
+    });
+    %>
+    
+    <a href="/add" style="display: block; text-align: center;">Add Book</a>
+
+    <%for (var i=0; i < books.length; i++){%>
+        <div class="book-container">
+            <img src="<%= 'https://covers.openlibrary.org/b/oclc/' + books[i].oclc +'-M.jpg?default=false' %>" onerror="this.onerror=null; this.src='res/question.png';" height="270">
+            <div class="book-info">
+                <div class="book-details">
+                    <h3>
+                        <%=books[i].name%>
+                    </h3>
+                    <b>
+                        <%=books[i].score%> / 10
+                    </b>
+                </div>
+                <p>
+                    <%=books[i].notes%>
+                </p>
+                <div class="book-details">
+                    <p>
+                        <b>OCLC:</b> <%=books[i].oclc%>
+                    </p>
+                    <p>
+                        <b>Date Released:</b> <%=books[i].date%>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="book-buttons">
+            <a href="<%= 'edit/' + books[i].id %>">Edit Book</a>
+            <a href="<%= 'delete/' + books[i].id %>">Delete Book</a>
+        </div>
+        <%if (i != books.length-1){%>
+            <img class="divider" src="res/divider.png">
+            <%}%>
+        <%}%>
+
+            <%- include('partials/footer.ejs'); -%>

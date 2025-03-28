@@ -1,0 +1,16 @@
+<%- include('partials/header.ejs'); -%>
+
+<div class="add-book-container">
+    <form class="comment" action="/add" method="POST">
+        <div class="inputs">
+            <input type="text" name="name" placeholder="Book Name">
+            <input type="number" name="oclc" placeholder="Book OCLC Number (use openlibrary.org)">
+            <input type="text" name="date" placeholder="Date Published">
+            <textarea type="text" name="notes" placeholder="Notes"></textarea>
+            <input type="number" name="rating" placeholder="Book Rating" min="0" max="10" >
+            <input type="submit" value="OK" class="submit">
+        </div>
+    </form>
+</div>
+
+<%- include('partials/footer.ejs'); -%>
